@@ -1,0 +1,44 @@
+import { useState, useEffect } from 'react';
+import './NavMenu.css';
+
+export default function NavMenu({ links }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleLinkClick = () => {
+    if (window.innerWidth < 768) {
+      setMenuOpen(false);
+    }
+  };
+
+  return (
+    <div className="navmenu-container">
+      <button
+        className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+        aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        Menu <span className={`arrow ${menuOpen ? 'open' : ''}`}>▼</span>
+      </button>
+
+      <ul className={`menu ${menuOpen ? 'open' : ''}`}>
+        {links.map((link, index) => (
+          <li key={index}>
+            <a href={link.href} onClick={handleLinkClick}>
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
