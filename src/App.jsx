@@ -1,10 +1,14 @@
-import Header from './components/Header';
 import Accordion from './components/Accordion';
 import BackToTopButton from './components/BackToTopButton';
+import CardsSection from './components/CardsSection';
 import Footer from './components/Footer';
-import Card from './components/Card';
+import Header from './components/Header';
+import Hero from './components/Hero';
 import accordionData from './data/accordionData';
+import heroImage from './assets/hero.webp';
 import './index.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function App() {
   return (
@@ -13,11 +17,13 @@ export default function App() {
 
       <main>
         <section className="hero">
-          <h1>Tranquilidade para viver mais</h1>
-          <p>
-            Viva mais e melhor com os benefícios que um serguro de vida te
-            oferece
-          </p>
+          <Hero
+            title="Tranquilidade para viver mais"
+            text="Viva mais e melhor com os benefícios que um serguro de vida te
+            oferece"
+            buttonText="Faça sua cotação"
+            backgroundImage={heroImage}
+          />
         </section>
 
         <section className="quote">
@@ -34,11 +40,7 @@ export default function App() {
         <section className="coverage">
           <h2>Nossas coberturas</h2>
           <p>Veja mais detalhes de cada proteção!</p>
-          <div className="cards-container">
-            <Card />
-            <Card />
-            <Card />
-          </div>
+          <CardsSection />
         </section>
 
         <section className="why-insurance" id="why">
