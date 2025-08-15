@@ -27,36 +27,68 @@ export default function App() {
         </section>
 
         <section className="quote">
-          <h2>Planos personalizados e sem burocracia</h2>
-          <p>1. Informe seus dados</p>
-          <p>2. Descubra o plano ideal para o seu perfil</p>
-          <p>3. Escolha sua forma de pagamento e contrate 100% online</p>
-          <p>
-            Pronto! Agora você e sua família têm todos os benefícios de viver
-            com segurança total
-          </p>
+          <div className="quote-container">
+            <div className="quote-image">
+              <img
+                src="src/assets/sectionQuote.webp"
+                alt="Planos personalizados"
+              />
+            </div>
+            <div className="quote-text">
+              <h2>Planos personalizados e sem burocracia</h2>
+              <ul>
+                <li>
+                  <span>1.</span> Informe seus dados
+                </li>
+                <li>
+                  <span>2.</span> Descubra o plano ideal para o seu perfil
+                </li>
+                <li>
+                  <span>3.</span> Escolha sua forma de pagamento e contrate 100%
+                  online
+                </li>
+              </ul>
+              <p className="quote-highlight">
+                Pronto! Agora você e sua família têm todos os benefícios de
+                viver com segurança total
+              </p>
+              <button className="quote-btn">Faça sua cotação</button>
+            </div>
+          </div>
         </section>
 
         <section className="coverage">
-          <h2>Nossas coberturas</h2>
-          <p>Veja mais detalhes de cada proteção!</p>
+          <div className="coverage-text">
+            <h2>Nossas coberturas</h2>
+            <p>Veja mais detalhes de cada proteção!</p>
+          </div>
           <CardsSection />
         </section>
 
         <section className="why-insurance" id="why">
-          <h2>Mas por que ter um seguro de vida?</h2>
-          <Accordion items={accordionData} />
+          <div className="why-insurance-text">
+            <h2>Mas por que ter um seguro de vida?</h2>
+          </div>
+          <div className="accordion-wrapper">
+            <Accordion items={accordionData} />
+          </div>
+          <div className="why-insurance-image">
+            <img src="src/assets/sectionWhy.webp" alt="Seguro de vida" />
+          </div>
+        </section>
+
+        <section className="questions">
+          <h2>Ainda não sabe qual seguro contratar?</h2>
+          <div className="questions-content">
+            <p>
+              Ligue pra gente e receba uma consultoria personalizada
+              gratuitamente!
+            </p>
+            <p>(99) 99999.9999</p>
+            <button>Se preferir, entre em contato pelo Whatsapp</button>
+          </div>
         </section>
       </main>
-
-      <section className="questions">
-        <h2>Ainda não sabe qual seguro contratar?</h2>
-        <p>
-          Ligue pra gente e receba uma consultoria personalizada gratuitamente!
-        </p>
-        <p>(99) 99999.9999</p>
-        <button>Se preferir, entre em contato pelo Whatsapp</button>
-      </section>
 
       <BackToTopButton />
       <Footer />

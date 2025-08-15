@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './Accordion.css';
 
 export default function Accordion({ items }) {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -18,6 +19,7 @@ export default function Accordion({ items }) {
           >
             {item.title}
           </button>
+          <hr />
           <div
             className={`accordion-content ${
               activeIndex === index ? 'open' : ''

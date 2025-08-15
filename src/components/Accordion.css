@@ -1,0 +1,28 @@
+hr {
+  width: 100%;
+  height: 1px;
+  border: 0px;
+  border-top: 1px solid #ccd1d6;
+  background-color: #dddddd;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  background: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-content.open {
+  max-height: 200px;
+  padding: 1rem;
+}
