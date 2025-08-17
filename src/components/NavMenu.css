@@ -9,9 +9,11 @@
   color: var(--secondary-color);
   font-size: 1rem;
   cursor: pointer;
-  font-weight: bold;
   align-items: center;
   gap: 5px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 .menu-toggle .arrow {
@@ -30,33 +32,49 @@
 
   .menu {
     position: absolute;
-    top: 40px;
+    top: 100%;
     right: 0;
+    left: 0;
     background: var(--primary-color);
+
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
     list-style: none;
     padding: 1rem;
     gap: 0;
-    border-radius: 8px;
     opacity: 0;
     transform: translateY(-10px);
     pointer-events: none;
     transition: all 0.3s ease;
+    z-index: 1000;
   }
 
   .menu.open {
+    width: 100vw;
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
     pointer-events: auto;
   }
 
   .menu li {
-    padding: 0.5rem 0;
+    text-align: center;
   }
 
   .menu a {
+    display: block;
+    padding: 0.75rem 0;
     color: var(--secondary-color);
     text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .customer {
+    display: none;
   }
 }
 
@@ -70,5 +88,15 @@
     pointer-events: auto;
     background: none;
     flex-direction: row;
+  }
+
+  .menu a {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .menu li:last-child {
+    display: none;
   }
 }

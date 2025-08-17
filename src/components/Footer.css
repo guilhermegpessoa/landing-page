@@ -19,6 +19,8 @@ hr {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-logo {
@@ -100,6 +102,12 @@ hr {
 
 .payment-icons img {
   width: 40px;
+}
+
+.footer-logo img,
+.payment-icons img {
+  max-width: 100%;
+  height: auto;
 }
 
 .footer-bottom {
