@@ -63,7 +63,7 @@ nav a {
 }
 
 .quote-image {
-  flex: 1;
+  order: 2;
   max-width: 500px;
 }
 
@@ -74,13 +74,14 @@ nav a {
 }
 
 .quote-text {
-  flex: 1;
+  order: 1;
   min-width: 280px;
 }
 
 .quote-text h2 {
-  font-size: 1.8rem;
   font-weight: 700;
+  font-size: 24px;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -91,35 +92,66 @@ nav a {
 }
 
 .quote-text li {
-  font-size: 1rem;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  vertical-align: middle;
+  text-align: left;
 }
 
 .quote-text li span {
   font-weight: 700;
   color: #83af38;
   margin-right: 8px;
-  font-size: 1.2rem;
+  font-size: 40px;
 }
 
 .quote-highlight {
   color: #83af38;
-  font-weight: 500;
   margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .quote-image {
+    order: 0;
+  }
+
+  .quote-text {
+    order: 0;
+  }
+
+  .quote-text h2 {
+    font-size: 36px;
+  }
+
+  .quote-text li {
+    font-size: 18px;
+  }
+
+  .quote-highlight {
+    font-size: 20px;
+    text-align: left;
+  }
 }
 
 .quote-btn {
+  display: block;
+  margin: auto;
   background: var(--primary-color);
   color: white;
   border: none;
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 132px;
   cursor: pointer;
   transition: background 0.3s ease;
+  order: 3;
 }
 
 .quote-btn:hover {
@@ -145,31 +177,54 @@ nav a {
 }
 
 .coverage h2 {
-  font-size: 1.8rem;
   font-weight: 700;
+  font-size: 24px;
+  text-align: center;
   margin-bottom: 20px;
 }
 
+.coverage-text p {
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .coverage h2 {
+    font-size: 36px;
+  }
+
+  .coverage-text p {
+    font-size: 20px;
+  }
+}
+
 .why-insurance {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
   padding: 2rem;
-  flex-wrap: wrap;
+  align-items: start;
+}
+
+.desktop-text {
+  display: block;
+}
+
+.mobile-text {
+  display: none;
 }
 
 .why-insurance-text {
-  flex-basis: 100%;
   margin-bottom: 1rem;
 }
 
 .accordion-wrapper {
-  flex: 1;
+  width: 100%;
 }
 
 .why-insurance-image {
-  flex: 1;
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
@@ -183,73 +238,161 @@ nav a {
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .why-insurance {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'image'
+      'text'
+      'accordion'
+      'button';
   }
 
   .why-insurance-image {
-    order: 0;
-    margin-bottom: 2rem;
+    grid-area: image;
+  }
+
+  .why-insurance-text {
+    grid-area: text;
   }
 
   .accordion-wrapper {
-    order: 1;
-    width: 100%;
+    grid-area: accordion;
+  }
+
+  .why-insurance > button {
+    grid-area: button;
+    justify-self: center;
+  }
+
+  .desktop-text {
+    display: none;
+  }
+
+  .mobile-text {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .why-insurance {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'text image'
+      'accordion image'
+      'accordion button';
+  }
+
+  .why-insurance-text {
+    grid-area: text;
+  }
+
+  .accordion-wrapper {
+    grid-area: accordion;
+  }
+
+  .why-insurance-image {
+    grid-area: image;
+  }
+
+  .why-insurance > button {
+    grid-area: button;
+    justify-self: center;
   }
 }
 
 .questions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'title'
+    'content'
+    'button';
+  align-items: start;
   padding: 2rem;
-  gap: 2rem;
-  background-image: url('src/assets/sectionQuestions.webp');
+  gap: 1rem;
+  background-image: url('src/assets/sectionQuestionsMobile.webp');
   background-size: cover;
   background-position: center;
   color: #3b454f;
   height: 612px;
+  position: relative;
 }
 
 .questions h2 {
-  flex: 1;
+  grid-area: title;
   margin: 0;
-  max-width: 300px;
+  text-align: center;
 }
 
 .questions-content {
-  flex: 1;
+  grid-area: content;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-self: start;
 }
 
 .questions button {
+  grid-area: button;
   background: var(--primary-color);
   color: white;
   border: none;
   padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+  justify-self: center;
+  margin-top: auto;
+  font-weight: 400;
+  font-size: 10px;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .questions {
-    flex-direction: column;
-    text-align: center;
+    background-image: url('src/assets/sectionQuestions.webp');
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'title contentTop'
+      'title contentBottom';
   }
 
   .questions h2 {
-    max-width: 100%;
-    margin-bottom: 1rem;
+    grid-area: title;
+    max-width: 300px;
+    align-self: center;
   }
 
   .questions-content {
-    width: 100%;
+    display: grid;
+    grid-template-areas:
+      'p1'
+      'p2'
+      'button';
+    grid-area: contentTop;
+    text-align: center;
+    align-self: start;
+  }
+
+  .questions-content p:nth-child(1) {
+    grid-area: p1;
+  }
+
+  .questions-content p:nth-child(2) {
+    grid-area: p2;
+  }
+
+  .questions-content button {
+    grid-area: button;
+    justify-self: center;
+  }
+
+  .questions-content p:nth-child(3) {
+    grid-area: contentBottom;
+    align-self: end;
+    justify-self: end;
+    text-align: right;
   }
 }
