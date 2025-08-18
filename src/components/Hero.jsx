@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Hero.css';
+import Button from './Button.jsx';
 
 export default function Hero({
   title,
@@ -28,10 +29,16 @@ export default function Hero({
     <section className="hero" style={heroStyle}>
       <div className="hero-content">
         <h1>{title}</h1>
-        <p>{text}</p>
+        <div className="hero-content-text">
+          <p>{text}</p>
+        </div>
       </div>
       <div className="hero-button-container">
-        <button onClick={onButtonClick}>{buttonText}</button>
+        <Button
+          onClick={onButtonClick}
+          text={buttonText}
+          className="btn-hero"
+        />
       </div>
     </section>
   );
