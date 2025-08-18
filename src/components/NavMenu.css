@@ -31,16 +31,13 @@
   width: 100vw;
   height: 100vh;
   background: var(--primary-color);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
   list-style: none;
   padding: 2rem 1rem;
   gap: 1rem;
-
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
@@ -68,11 +65,12 @@
   line-height: 150%;
 }
 
-.customer {
-  display: none;
-}
-
 @media (min-width: 768px) {
+  .navmenu-container {
+    display: flex;
+    max-width: 50vw;
+  }
+
   .menu-toggle {
     display: none;
   }
@@ -86,6 +84,7 @@
     pointer-events: auto;
     background: none;
     flex-direction: row;
+    justify-content: center;
   }
 
   .menu a {
@@ -96,9 +95,5 @@
 
   .menu li:last-child {
     display: none;
-  }
-
-  .customer {
-    display: block;
   }
 }

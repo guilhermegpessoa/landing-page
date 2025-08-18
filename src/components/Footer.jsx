@@ -1,7 +1,22 @@
-import React from 'react';
 import { FaEnvelope } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
 import logo from '../assets/logoFooter.png';
+import facebookIcon from '../assets/Facebook.png';
+import twitterIcon from '../assets/Twitter.svg';
+import instagramIcon from '../assets/Instagram.svg';
+import iconPhone from '../assets/iconPhone.png';
+import iconWhatsapp from '../assets/iconWhatsapp.png';
+import logoMastercard from '../assets/logoMastercard.png';
+import logoVisa from '../assets/logoVisa.png';
+import logoAmex from '../assets/logoAmex.png';
+import logoElo from '../assets/logoElo.png';
+import logoDiners from '../assets/logoDiners.png';
+import logoHiper from '../assets/logoHiper.png';
+import logoBoleto from '../assets/logoBoleto.png';
+import logoDesconto from '../assets/logoDesconto.png';
+import logoBancos from '../assets/logoBancos.png';
+import logoPix from '../assets/logoPix.svg';
+import footerImg from '../assets/footer.png';
 import footerMenuData from '../data/footerMenuData';
 
 import './Footer.css';
@@ -16,13 +31,13 @@ const Footer = () => {
           </a>
           <div className="social-icons">
             <a href="#">
-              <img src="src/assets/Facebook.png" alt="Facebook" />
+              <img src={facebookIcon} alt="Facebook" />
             </a>
             <a href="#">
-              <img src="src/assets/Twitter.svg" alt="Twitter" />
+              <img src={twitterIcon} alt="Twitter" />
             </a>
             <a href="#">
-              <img src="src/assets/Instagram.svg" alt="Instagram" />
+              <img src={instagramIcon} alt="Instagram" />
             </a>
           </div>
         </div>
@@ -33,17 +48,17 @@ const Footer = () => {
           <h4>CENTRAL DE VENDAS:</h4>
           <div className="sales-buttons">
             <a href="tel:+553140001667" className="btn-green">
-              <img src="src/assets/iconPhone.png" /> (31) 4000-1667
+              <img src={iconPhone} /> (31) 4000-1667
             </a>
             <a href="tel:+5531982042542" className="btn-green">
-              <img src="src/assets/iconWhatsapp.png" /> (31) 98204-2542
+              <img src={iconWhatsapp} /> (31) 98204-2542
             </a>
           </div>
 
           <h4>ATENDIMENTO:</h4>
           <div className="sales-buttons">
             <a href="tel:+553140001667" className="btn-green">
-              <img src="src/assets/iconPhone.png" /> (31) 4000-1667
+              <img src={iconPhone} /> (31) 4000-1667
             </a>
             <a href="#" className="btn-green">
               Central de Ajuda
@@ -85,20 +100,20 @@ const Footer = () => {
           <p>FORMAS DE PAGAMENTO:</p>
           <p>Crédito em até 12 vezes</p>
           <div className="payment-icons">
-            <img src="src/assets/logoMastercard.png" alt="Mastercard" />
-            <img src="src/assets/logoVisa.png" alt="Visa" />
-            <img src="src/assets/logoAmex.png" alt="Amex" />
-            <img src="src/assets/logoElo.png" alt="Elo" />
-            <img src="src/assets/logoDiners.png" alt="Diners" />
-            <img src="src/assets/logoHiper.png" alt="Hipercard" />
+            <img src={logoMastercard} alt="Mastercard" />
+            <img src={logoVisa} alt="Visa" />
+            <img src={logoAmex} alt="Amex" />
+            <img src={logoElo} alt="Elo" />
+            <img src={logoDiners} alt="Diners" />
+            <img src={logoHiper} alt="Hipercard" />
           </div>
           <p>Boleto bancário</p>
-          <img src="src/assets/logoBoleto.png" alt="Boleto" />
-          <img src="src/assets/logoDesconto.png" alt="Desconto" />
+          <img src={logoBoleto} alt="Boleto" />
+          <img src={logoDesconto} alt="Desconto" />
           <p>Transferência bancária</p>
-          <img src="src/assets/logoBancos.png" alt="Bancos" />
+          <img src={logoBancos} alt="Bancos" />
           <p>Pagamento com pix</p>
-          <img src="src/assets/logoPix.svg" alt="PIX" />
+          <img src={logoPix} alt="PIX" />
         </div>
 
         <hr />
@@ -110,7 +125,7 @@ const Footer = () => {
           </p>
           <p> Seguros Promo - Emitir Shop | By - 2XT Tecnologia</p>
         </div>
-        <img src="src/assets/footer.png" />
+        <img src={footerImg} />
       </div>
     </footer>
   );

@@ -311,7 +311,7 @@ nav a {
   align-items: start;
   padding: 2rem;
   gap: 1rem;
-  background-image: url('src/assets/sectionQuestionsMobile.webp');
+  /* background-image: url('src/assets/sectionQuestionsMobile.webp'); */
   background-size: cover;
   background-position: center;
   color: #3b454f;

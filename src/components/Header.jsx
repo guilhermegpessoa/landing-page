@@ -1,4 +1,7 @@
 import logo from '../assets/logo.png';
+import iconWhatsapp from '../assets/iconWhatsapp.png';
+import iconCostumer from '../assets/iconCustomer.png';
+import iconPhone from '../assets/iconPhone.png';
 import NavMenu from './NavMenu';
 import './Header.css';
 
@@ -17,9 +20,9 @@ export default function Header() {
     <header>
       <div className="header-bar">
         <p>
-          CENTRAL DE VENDAS: <img src="src/assets/iconPhone.png" />{' '}
+          CENTRAL DE VENDAS: <img src={iconPhone} />{' '}
           <span> (31)4000-1667 </span>
-          <img src="src/assets/iconWhatsapp.png" /> <span>(31) 2534-2115</span>
+          <img src={iconWhatsapp} /> <span>(31) 2534-2115</span>
         </p>
       </div>
       <nav className="container">
@@ -28,8 +31,9 @@ export default function Header() {
         </a>
         <NavMenu links={links} />
         <div className="customer">
-          <a>
-            <img src="src/assets/iconCustomer.png" /> Área do Cliente &rarr;
+          <a href="#areadocliente">
+            <img src={iconCostumer} alt="Área do Cliente" /> Área do Cliente
+            &rarr;
           </a>
         </div>
       </nav>

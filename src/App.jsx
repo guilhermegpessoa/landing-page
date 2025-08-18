@@ -9,6 +9,11 @@ import Hero from './components/Hero';
 import accordionData from './data/accordionData';
 import heroImage from './assets/hero.webp';
 import heroImageMobile from './assets/heroMobile.webp';
+import sectionQuoteImg from './assets/sectionQuote.webp';
+import sectionWhyImg from './assets/sectionWhy.webp';
+import iconWhatsapp from './assets/iconWhatsapp.png';
+import sectionQuestionsBg from './assets/sectionQuestions.webp';
+import sectionQuestionsMobileBg from './assets/sectionQuestionsMobile.webp';
 import './index.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -24,6 +29,11 @@ export default function App() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const questionsBgImg = isMobile
+    ? sectionQuestionsMobileBg
+    : sectionQuestionsBg;
+
   return (
     <>
       <Header />
@@ -43,10 +53,7 @@ export default function App() {
         <section className="quote">
           <div className="quote-container">
             <div className="quote-image">
-              <img
-                src="src/assets/sectionQuote.webp"
-                alt="Planos personalizados"
-              />
+              <img src={sectionQuoteImg} alt="Planos personalizados" />
             </div>
             <div className="quote-text">
               <h2>Planos personalizados e sem burocracia</h2>
@@ -95,12 +102,15 @@ export default function App() {
             <Accordion items={accordionData} />
           </div>
           <div className="why-insurance-image">
-            <img src="src/assets/sectionWhy.webp" alt="Seguro de vida" />
+            <img src={sectionWhyImg} alt="Seguro de vida" />
           </div>
           <Button text="Faça sua cotação" />
         </section>
 
-        <section className="questions">
+        <section
+          className="questions"
+          style={{ backgroundImage: `url(${questionsBgImg})` }}
+        >
           {isMobile && <h2>Ainda tem dúvidas sobre seguro de vida?</h2>}
           {!isMobile && <h2>Ainda não sabe qual seguro contratar?</h2>}
           <div className="questions-content">
@@ -121,13 +131,13 @@ export default function App() {
           </div>
           {isMobile && (
             <button>
-              <img src="src/assets/iconWhatsapp.png" />
+              <img src={iconWhatsapp} />
               Também respondemos pelo Whatsapp!
             </button>
           )}
           {!isMobile && (
             <button>
-              <img src="src/assets/iconWhatsapp.png" />
+              <img src={iconWhatsapp} />
               Se preferir, entre em contato pelo Whatsapp
             </button>
           )}
