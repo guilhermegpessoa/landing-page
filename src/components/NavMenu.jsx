@@ -14,6 +14,21 @@ export default function NavMenu({ links }) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+    } else {
+      const scrollY = -parseInt(document.body.style.top || '0');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollY);
+    }
+  }, [menuOpen]);
+
   const handleLinkClick = () => {
     if (window.innerWidth < 768) {
       setMenuOpen(false);
