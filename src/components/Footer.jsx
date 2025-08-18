@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
 import logo from '../assets/logoFooter.png';
 import footerMenuData from '../data/footerMenuData';
@@ -33,17 +33,17 @@ const Footer = () => {
           <h4>CENTRAL DE VENDAS:</h4>
           <div className="sales-buttons">
             <a href="tel:+553140001667" className="btn-green">
-              <FaPhoneAlt /> (31) 4000-1667
+              <img src="src/assets/iconPhone.png" /> (31) 4000-1667
             </a>
             <a href="tel:+5531982042542" className="btn-green">
-              <FaPhoneAlt /> (31) 98204-2542
+              <img src="src/assets/iconWhatsapp.png" /> (31) 98204-2542
             </a>
           </div>
 
           <h4>ATENDIMENTO:</h4>
           <div className="sales-buttons">
             <a href="tel:+553140001667" className="btn-green">
-              <FaPhoneAlt /> (31) 4000-1667
+              <img src="src/assets/iconPhone.png" /> (31) 4000-1667
             </a>
             <a href="#" className="btn-green">
               Central de Ajuda
@@ -61,20 +61,23 @@ const Footer = () => {
 
         <div className="footer-menus">
           {footerMenuData.map((menu, index) => (
-            <details key={index}>
-              <summary>
-                {menu.title} <IoIosArrowDown />
-              </summary>
-              {menu.items.length > 0 && (
-                <ul>
-                  {menu.items.map((item, i) => (
-                    <li key={i}>
-                      <a href="#">{item}</a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </details>
+            <div key={index}>
+              <details>
+                <summary>
+                  {menu.title} <IoIosArrowDown />
+                </summary>
+                {menu.items.length > 0 && (
+                  <ul>
+                    {menu.items.map((item, i) => (
+                      <li key={i}>
+                        <a href="#">{item}</a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </details>
+              <hr />
+            </div>
           ))}
         </div>
 
@@ -107,6 +110,7 @@ const Footer = () => {
           </p>
           <p> Seguros Promo - Emitir Shop | By - 2XT Tecnologia</p>
         </div>
+        <img src="src/assets/footer.png" />
       </div>
     </footer>
   );

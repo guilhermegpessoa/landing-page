@@ -1,4 +1,4 @@
-hr {
+.accordion-item hr {
   width: 100%;
   height: 1px;
   border: 0px;
@@ -25,4 +25,14 @@ hr {
 .accordion-content.open {
   max-height: 200px;
   padding: 1rem;
+}
+
+.accordion-arrow {
+  float: right;
+  transition: transform 0.3s ease;
+  color: #60c742;
+}
+
+.accordion-arrow.open {
+  transform: rotate(180deg);
 }
