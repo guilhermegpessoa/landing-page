@@ -35,18 +35,6 @@ nav a {
   text-decoration: none;
 }
 
-.back-to-top {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 .quote {
   padding: 1rem 20px;
   background: #fff;

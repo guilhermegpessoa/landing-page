@@ -24,19 +24,11 @@
   }
 }
 
-@media (min-width: 768px) {
-  .cards-container .card {
-    width: 328px;
-    height: 287px;
-    margin: 0 auto;
-  }
-
-  .slick-track {
-    height: 300px;
-    display: flex !important;
-    gap: 1rem;
-    justify-content: center;
-  }
+.slick-track {
+  height: 300px;
+  display: flex !important;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .slick-slide {
@@ -68,4 +60,12 @@
 
 .slick-dots li.slick-active button:before {
   color: #00512a;
+}
+
+@media (min-width: 768px) {
+  .cards-container .card {
+    width: 328px;
+    height: 287px;
+    margin: 0 auto;
+  }
 }

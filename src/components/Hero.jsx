@@ -26,7 +26,12 @@ export default function Hero({
   };
 
   return (
-    <section className="hero" style={heroStyle}>
+    <section
+      className="hero"
+      style={heroStyle}
+      role="banner"
+      aria-label={`Seção principal: ${title}`}
+    >
       <div className="hero-content">
         <h1>{title}</h1>
         <div className="hero-content-text">
@@ -38,6 +43,7 @@ export default function Hero({
           onClick={onButtonClick}
           text={buttonText}
           className="btn-hero"
+          aria-label={buttonText}
         />
       </div>
     </section>

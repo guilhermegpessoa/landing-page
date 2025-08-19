@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './BackToTopButton.css';
 
 export default function BackToTopButton() {
   const [visible, setVisible] = useState(false);

@@ -42,14 +42,18 @@ const Footer = () => {
       <h4>CENTRAL DE VENDAS:</h4>
       <div className="sales-buttons">
         <a href="tel:+553140001667" className="btn-green">
-          {isMobile ? <img src={iconMobile} /> : <img src={iconMobileFooter} />}{' '}
+          {isMobile ? (
+            <img src={iconMobile} alt="Ícone telefone" loading="lazy" />
+          ) : (
+            <img src={iconMobileFooter} alt="Ícone telefone" loading="lazy" />
+          )}{' '}
           (31) 4000-1667
         </a>
         <a href="tel:+5531982042542" className="btn-green">
           {isMobile ? (
-            <img src={iconWhatsapp} />
+            <img src={iconWhatsapp} alt="Ícone WhatsApp" loading="lazy" />
           ) : (
-            <img src={iconWhatsappFooter} />
+            <img src={iconWhatsappFooter} alt="Ícone WhatsApp" loading="lazy" />
           )}
           (31) 98204-2542
         </a>
@@ -58,18 +62,26 @@ const Footer = () => {
       <h4>ATENDIMENTO:</h4>
       <div className="sales-buttons">
         <a href="tel:+553140001667" className="btn-green">
-          {isMobile ? <img src={iconMobile} /> : <img src={iconMobileFooter} />}{' '}
+          {isMobile ? (
+            <img src={iconMobile} alt="Ícone telefone" loading="lazy" />
+          ) : (
+            <img src={iconMobileFooter} alt="Ícone telefone" loading="lazy" />
+          )}{' '}
           (31) 4000-1667
         </a>
         <a href="#" className="btn-green">
-          {!isMobile && <img src={iconQuestion} />}Central de Ajuda
+          {!isMobile && (
+            <img src={iconQuestion} alt="Ícone ajuda" loading="lazy" />
+          )}
+          Central de Ajuda
         </a>
         {isMobile && (
           <a
             href="mailto:atendimento@segurospromo.com.br"
             className="btn-green btn-email"
           >
-            <img src={iconEmail} /> atendimento@segurospromo.com.br
+            <img src={iconEmail} alt="Ícone e-mail" loading="lazy" />{' '}
+            atendimento@segurospromo.com.br
           </a>
         )}
       </div>
@@ -87,18 +99,18 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-col footer-social">
           <a href="/" className="footer-logo">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="Logo Seguros Promo" loading="lazy" />
           </a>
           <div className="social-icons">
             {!isMobile && <p>ACOMPANHE A GENTE:</p>}
             <a href="#">
-              <img src={facebookIcon} alt="Facebook" />
+              <img src={facebookIcon} alt="Facebook" loading="lazy" />
             </a>
             <a href="#">
-              <img src={twitterIcon} alt="Twitter" />
+              <img src={twitterIcon} alt="Twitter" loading="lazy" />
             </a>
             <a href="#">
-              <img src={instagramIcon} alt="Instagram" />
+              <img src={instagramIcon} alt="Instagram" loading="lazy" />
             </a>
           </div>
         </div>
@@ -159,34 +171,39 @@ const Footer = () => {
           <div>
             <p>Crédito em até 12 vezes</p>
             <div className="payment-icons">
-              <img src={logoMastercard} alt="Mastercard" />
-              <img src={logoVisa} alt="Visa" />
-              <img src={logoAmex} alt="Amex" />
-              <img src={logoElo} alt="Elo" />
-              <img src={logoDiners} alt="Diners" />
-              <img src={logoHiper} alt="Hipercard" />
+              <img src={logoMastercard} alt="Mastercard" loading="lazy" />
+              <img src={logoVisa} alt="Visa" loading="lazy" />
+              <img src={logoAmex} alt="Amex" loading="lazy" />
+              <img src={logoElo} alt="Elo" loading="lazy" />
+              <img src={logoDiners} alt="Diners" loading="lazy" />
+              <img src={logoHiper} alt="Hipercard" loading="lazy" />
             </div>
           </div>
 
           <div>
             <p>Boleto bancário</p>
             <div className="payment-icons">
-              <img src={logoBoleto} alt="Boleto" />
-              <img src={logoDesconto} alt="Desconto" />
+              <img src={logoBoleto} alt="Boleto" loading="lazy" />
+              <img src={logoDesconto} alt="Desconto" loading="lazy" />
             </div>
           </div>
 
           <div>
             <p>Transferência bancária</p>
             <div className="payment-icons">
-              <img src={logoBancos} alt="Bancos" className="banks" />
+              <img
+                src={logoBancos}
+                alt="Bancos"
+                className="banks"
+                loading="lazy"
+              />
             </div>
           </div>
 
           <div>
             <p>Pagamento com pix</p>
             <div className="payment-icons">
-              <img src={logoPix} alt="PIX" />
+              <img src={logoPix} alt="PIX" loading="lazy" />
             </div>
           </div>
         </div>
@@ -199,7 +216,7 @@ const Footer = () => {
             andar - Belo Horizonte - MG © 2017 <br />
             Seguros Promo - Emitir Shop | By - 2XT Tecnologia
           </p>
-          <img src={iconPartners} />
+          <img src={iconPartners} alt="Parceiros" loading="lazy" />
         </div>
       </div>
     </footer>

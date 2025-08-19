@@ -18,22 +18,27 @@ export default function Header() {
 
   return (
     <header>
-      <div className="header-bar">
+      <div role="region" aria-label="Central de vendas" className="header-bar">
         <p>
-          CENTRAL DE VENDAS: <img src={iconMobile} />{' '}
-          <span> (31)4000-1667 </span>
-          <img src={iconWhatsapp} /> <span>(31) 2534-2115</span>
+          CENTRAL DE VENDAS:{' '}
+          <img src={iconMobile} alt="Telefone" loading="lazy" />{' '}
+          <span aria-label="Ligar para (31) 4000-1667">(31)4000-1667</span>
+          <img src={iconWhatsapp} alt="WhatsApp" loading="lazy" />
+          <span aria-label="Ligar para WhatsApp (31) 2534-2115">
+            (31) 2534-2115
+          </span>
         </p>
       </div>
-      <nav className="container">
-        <a href="#" className="logo">
-          <img src={logo} alt="Logo" />
+
+      <nav className="container" aria-label="Menu principal">
+        <a href="#" className="logo" aria-label="Página inicial">
+          <img src={logo} alt="Seguros Promo" />
         </a>
         <NavMenu links={links} />
         <div className="customer">
-          <a href="#areadocliente">
-            <img src={iconCostumer} alt="Área do Cliente" /> Área do Cliente
-            &rarr;
+          <a href="#areadocliente" aria-label="Acessar Área do Cliente">
+            <img src={iconCostumer} alt="Área do Cliente" loading="lazy" /> Área
+            do Cliente &rarr;
           </a>
         </div>
       </nav>

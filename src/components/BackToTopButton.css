@@ -1,0 +1,11 @@
+.back-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -36,16 +36,18 @@ export default function NavMenu({ links }) {
   };
 
   return (
-    <div className="navmenu-container">
+    <nav className="navmenu-container" aria-label="Menu principal">
       <button
         className={`menu-toggle ${menuOpen ? 'open' : ''}`}
         aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+        aria-expanded={menuOpen}
+        aria-controls="menu"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         Menu <span className={`arrow ${menuOpen ? 'open' : ''}`}>▼</span>
       </button>
 
-      <ul className={`menu ${menuOpen ? 'open' : ''}`}>
+      <ul id="menu" className={`menu ${menuOpen ? 'open' : ''}`}>
         {links.map((link, index) => (
           <li key={index}>
             <a href={link.href} onClick={handleLinkClick}>
@@ -54,6 +56,6 @@ export default function NavMenu({ links }) {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 }

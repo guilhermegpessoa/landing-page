@@ -10,39 +10,45 @@ export default function Accordion({ items }) {
 
   return (
     <div className="accordion">
-      {items.map((item, index) => (
-        <div key={index} className="accordion-item">
-          <button
-            className="accordion-header"
-            aria-expanded={activeIndex === index}
-            onClick={() => toggleIndex(index)}
-          >
-            {item.title}
-            <span
-              className={`accordion-arrow ${activeIndex === index ? 'open' : ''}`}
+      {items.map((item, index) => {
+        const isOpen = activeIndex === index;
+        const contentId = `accordion-content-${index}`;
+
+        return (
+          <div key={index} className="accordion-item">
+            <button
+              className="accordion-header"
+              aria-expanded={isOpen}
+              aria-controls={contentId}
+              id={`accordion-header-${index}`}
+              onClick={() => toggleIndex(index)}
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </span>
-          </button>
-          <div
-            className={`accordion-content ${activeIndex === index ? 'open' : ''}`}
-          >
-            <p>{item.content}</p>
+              {item.title}
+              <span className={`accordion-arrow ${isOpen ? 'open' : ''}`}>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </span>
+            </button>
+            <div
+              id={contentId}
+              className={`accordion-content ${isOpen ? 'open' : ''}`}
+            >
+              <p>{item.content}</p>
+            </div>
+            <hr />
           </div>
-          <hr />
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

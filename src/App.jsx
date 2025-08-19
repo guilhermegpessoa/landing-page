@@ -23,10 +23,7 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -40,21 +37,26 @@ export default function App() {
       <Header />
 
       <main>
-        <section className="hero">
-          <Hero
-            title="Tranquilidade para viver mais"
-            text="Viva mais e melhor com os benefícios que um serguro de vida te
-            oferece"
-            buttonText="Faça sua cotação"
-            backgroundImage={heroImage}
-            backgroundImageMobile={heroImageMobile}
-          />
-        </section>
+        <Hero
+          title="Tranquilidade para viver mais"
+          text="Viva mais e melhor com os benefícios que um seguro de vida te oferece"
+          buttonText="Faça sua cotação"
+          backgroundImage={heroImage}
+          backgroundImageMobile={heroImageMobile}
+        />
 
-        <section className="quote">
+        <section
+          className="quote"
+          role="region"
+          aria-label="Planos personalizados"
+        >
           <div className="quote-container">
             <div className="quote-image">
-              <img src={sectionQuoteImg} alt="Planos personalizados" />
+              <img
+                src={sectionQuoteImg}
+                alt="Planos personalizados"
+                loading="lazy"
+              />
             </div>
             <div className="quote-text">
               <h2>Planos personalizados e sem burocracia</h2>
@@ -84,17 +86,29 @@ export default function App() {
           </div>
         </section>
 
-        <section className="coverage">
+        <section
+          className="coverage"
+          role="region"
+          aria-label="Coberturas disponíveis"
+        >
           <div className="coverage-text">
             <h2>Nossas coberturas</h2>
-            {isMobile && <p>Contratar um Seguro de Vida garante que:</p>}
-            {!isMobile && <p>Veja mais detalhes de cada proteção!</p>}
+            <p>
+              {isMobile
+                ? 'Contratar um Seguro de Vida garante que:'
+                : 'Veja mais detalhes de cada proteção!'}
+            </p>
           </div>
           <CardsSection />
           <Button text="Faça sua cotação" />
         </section>
 
-        <section className="why-insurance" id="why">
+        <section
+          className="why-insurance"
+          id="why"
+          role="region"
+          aria-label="Por que ter um seguro de vida"
+        >
           <div className="why-insurance-text">
             <h2 className="desktop-text">Mas por que ter um seguro de vida?</h2>
             <h2 className="mobile-text">Por que ter um seguro de vida?</h2>
@@ -103,49 +117,40 @@ export default function App() {
             <Accordion items={accordionData} />
           </div>
           <div className="why-insurance-image">
-            <img src={sectionWhyImg} alt="Seguro de vida" />
+            <img src={sectionWhyImg} alt="Seguro de vida" loading="lazy" />
           </div>
           <Button text="Faça sua cotação" className="btn-accordion" />
         </section>
 
         <section
           className="questions"
+          role="region"
+          aria-label="Dúvidas sobre seguro de vida"
           style={{ backgroundImage: `url(${questionsBgImg})` }}
         >
-          {isMobile && <h2>Ainda tem dúvidas sobre seguro de vida?</h2>}
-          {!isMobile && <h2>Ainda não sabe qual seguro contratar?</h2>}
+          <h2>
+            {isMobile
+              ? 'Ainda tem dúvidas sobre seguro de vida?'
+              : 'Ainda não sabe qual seguro contratar?'}
+          </h2>
           <div className="questions-content">
-            {isMobile && (
-              <p>
-                Entre em contato e receba uma consultoria personalizada
-                gratuitamente
-              </p>
-            )}
-            {!isMobile && (
-              <p>
-                Ligue pra gente e receba uma consultoria personalizada
-                gratuitamente!
-              </p>
-            )}
             <p>
-              {' '}
-              <img src={iconPhone} />
-              (99) 99999.9999
+              {isMobile
+                ? 'Entre em contato e receba uma consultoria personalizada gratuitamente'
+                : 'Ligue pra gente e receba uma consultoria personalizada gratuitamente!'}
+            </p>
+            <p>
+              <img src={iconPhone} alt="Telefone" loading="lazy" /> (99)
+              99999.9999
             </p>
             <p>Atendemos pelo telefone de seg. a sex., das 9h às 17h.</p>
           </div>
-          {isMobile && (
-            <button>
-              <img src={iconWhatsapp} />
-              Também respondemos pelo Whatsapp!
-            </button>
-          )}
-          {!isMobile && (
-            <button>
-              <img src={iconWhatsapp} />
-              Se preferir, entre em contato pelo Whatsapp
-            </button>
-          )}
+          <button aria-label="Contato via WhatsApp">
+            <img src={iconWhatsapp} alt="WhatsApp" loading="lazy" />
+            {isMobile
+              ? 'Também respondemos pelo Whatsapp!'
+              : 'Se preferir, entre em contato pelo Whatsapp'}
+          </button>
         </section>
       </main>
 
