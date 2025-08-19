@@ -25,7 +25,7 @@
 }
 
 .slick-track {
-  height: 300px;
+  height: 310px;
   display: flex !important;
   gap: 1rem;
   justify-content: center;
@@ -65,7 +65,7 @@
 @media (min-width: 768px) {
   .cards-container .card {
     width: 328px;
-    height: 287px;
+    height: 300px;
     margin: 0 auto;
   }
 }

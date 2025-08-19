@@ -113,6 +113,10 @@ nav a {
     order: 0;
   }
 
+  .quote-image img {
+    width: 110%;
+  }
+
   .quote-text {
     order: 0;
   }
@@ -304,6 +308,7 @@ nav a {
 
   .why-insurance-image {
     grid-area: image;
+    margin-bottom: 0;
   }
 
   .why-insurance > button {

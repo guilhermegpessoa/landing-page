@@ -77,8 +77,9 @@ src/
 └─ main.jsx         # Entrada principal do React
 ```
 
-## Atualizações do design
+## Considerações sobre o design
 
 - **Seção "Nossas coberturas":** No layout desktop, adicionei um carrossel para os cards. Isso permite exibir mais cards, mantendo a consistência com o design mobile, mas mostrando apenas 3 por vez na tela.
 - **Seção "Mas por que ter um seguro de vida":** O botão "Faça sua cotação" foi centralizado em relação à imagem, melhorando a simetria visual e a experiência do usuário.
 - **Footer:** No layout desktop, o design original do Figma não incluía o footer. Acrescentei o footer, utilizando como referência o site em produção, garantindo que a página ficasse completa e funcional.
+- **Conteúdo diferente:** Em algumas seções, o conteúdo diverge entre mobile e desktop. Um exemplo é a seção "Mas por que ter um seguro de vida?", que o título diverge no mobile ("Por que ter um seguro de vida"). Essas diferenças foram mantidas, mesmo que idealmente o conteúdo deveria ser o mesmo. O layout dos cards também diverge, já que no desktop eles tem o botão "Saiba Mais" e no mobile, não.

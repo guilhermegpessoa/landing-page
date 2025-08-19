@@ -184,7 +184,12 @@ const Footer = () => {
             <p>Boleto bancário</p>
             <div className="payment-icons">
               <img src={logoBoleto} alt="Boleto" loading="lazy" />
-              <img src={logoDesconto} alt="Desconto" loading="lazy" />
+              <img
+                src={logoDesconto}
+                className="discount"
+                alt="Desconto"
+                loading="lazy"
+              />
             </div>
           </div>
 
