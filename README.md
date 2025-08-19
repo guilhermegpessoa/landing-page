@@ -1,12 +1,84 @@
-# React + Vite
+# Landing Page Seguros Promo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page desenvolvida em **React** com **Vite**, criada como desafio técnico.
 
-Currently, two official plugins are available:
+O projeto foi implementado com foco em:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Responsividade (desktop e mobile)
+- Código limpo, semântico e de fácil manutenção
+- Métodos simples e funcionais
+- SEO básico
+- Acessibilidade (ARIA, alt em imagens, navegação por teclado)
+- Performance otimizada (lazy loading de imagens, CSS eficiente)
 
-## Expanding the ESLint configuration
+O projeto está **deployado no Vercel**: [Clique aqui para acessar](https://landing-page-one-iota-39.vercel.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tecnologias utilizadas
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- CSS3
+- react-slick (slider/carrossel de cards)
+- react-icons (ícones)
+
+---
+
+## Como rodar o projeto localmente
+
+1. **Clone o repositório**
+
+```bash
+git clone https://github.com/guilhermegpessoa/landing-page.git
+cd landing-page
+```
+
+2. **Instale as dependências**
+
+```bash
+npm install
+```
+
+ou
+
+```bash
+yarn
+```
+
+3. **Execute o servidor de desenvolvimento**
+
+```bash
+npm run dev
+```
+
+ou
+
+```bash
+yarn dev
+```
+
+4. **Abra o projeto no navegador**
+
+Após executar o comando acima, o terminal irá mostrar a URL local (ex: http://localhost:5173).
+
+Acesse para visualizar a landing page.
+
+## Estrutura do projeto
+
+```bash
+src/
+│
+├─ assets/          # Imagens e ícones
+├─ components/      # Componentes React reutilizáveis (Header, Hero, Footer, Cards, Accordion, etc.)
+├─ data/            # Dados utilizados pelos componentes (ex: cardsData, accordionData)
+├─ App.jsx          # Componente principal que organiza toda a landing page
+├─ index.css        # Estilos globais
+└─ main.jsx         # Entrada principal do React
+```
+
+## Atualizações do design
+
+- **Seção "Nossas coberturas":** No layout desktop, adicionei um carrossel para os cards. Isso permite exibir mais cards, mantendo a consistência com o design mobile, mas mostrando apenas 3 por vez na tela.
+- **Seção "Mas por que ter um seguro de vida":** O botão "Faça sua cotação" foi centralizado em relação à imagem, melhorando a simetria visual e a experiência do usuário.
+- **Footer:** No layout desktop, o design original do Figma não incluía o footer. Acrescentei o footer, utilizando como referência o site em produção, garantindo que a página ficasse completa e funcional.
