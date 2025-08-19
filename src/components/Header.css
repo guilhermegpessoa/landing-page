@@ -49,8 +49,8 @@ header {
 }
 
 .customer img {
-  width: 24px;
-  height: 24px;
+  width: 15px;
+  height: 15px;
 }
 
 @media (min-width: 768px) {

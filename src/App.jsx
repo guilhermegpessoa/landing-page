@@ -75,11 +75,11 @@ export default function App() {
                 viver com segurança total
               </p>
               {!isMobile && (
-                <button className="quote-btn">Faça sua cotação</button>
+                <Button text="Faça sua cotação" className="btn-quote" />
               )}
             </div>
             {isMobile && (
-              <button className="quote-btn">Faça sua cotação</button>
+              <Button text="Faça sua cotação" className="btn-quote" />
             )}
           </div>
         </section>

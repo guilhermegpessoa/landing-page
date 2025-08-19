@@ -28,6 +28,14 @@
   .cards-container .card {
     width: 328px;
     height: 287px;
+    margin: 0 auto;
+  }
+
+  .slick-track {
+    height: 300px;
+    display: flex !important;
+    gap: 1rem;
+    justify-content: center;
   }
 }
 
@@ -35,10 +43,23 @@
   display: flex !important;
   justify-content: center;
   align-items: center;
+  padding: 0 !important;
 }
 
 .slick-slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
   height: 100%;
+}
+
+.slick-list {
+  margin: 0 15vw !important;
+}
+
+.slick-slide .card {
+  margin: auto;
 }
 
 .slick-dots li button:before {

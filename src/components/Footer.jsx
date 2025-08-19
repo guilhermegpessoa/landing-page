@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
-import logo from '../assets/logoFooter.png';
+import logo from '../assets/logoFooter.svg';
 import facebookIcon from '../assets/Facebook.png';
 import twitterIcon from '../assets/Twitter.svg';
 import instagramIcon from '../assets/Instagram.svg';
 import iconEmail from '../assets/iconEmail.svg';
 import iconMobile from '../assets/iconMobile.png';
+import iconMobileFooter from '../assets/iconPhoneFooter.svg';
 import iconWhatsapp from '../assets/iconWhatsapp.png';
+import iconWhatsappFooter from '../assets/iconWhatsappFooter.svg';
+import iconQuestion from '../assets/iconQuestion.svg';
 import logoMastercard from '../assets/logoMastercard.png';
 import logoVisa from '../assets/logoVisa.png';
 import logoAmex from '../assets/logoAmex.png';
@@ -17,7 +20,7 @@ import logoBoleto from '../assets/logoBoleto.png';
 import logoDesconto from '../assets/logoDesconto.png';
 import logoBancos from '../assets/logoBancos.png';
 import logoPix from '../assets/logoPix.svg';
-import footerImg from '../assets/footer.png';
+import iconPartners from '../assets/iconPartners.svg';
 import footerMenuData from '../data/footerMenuData';
 
 import './Footer.css';
@@ -39,27 +42,36 @@ const Footer = () => {
       <h4>CENTRAL DE VENDAS:</h4>
       <div className="sales-buttons">
         <a href="tel:+553140001667" className="btn-green">
-          <img src={iconMobile} /> (31) 4000-1667
+          {isMobile ? <img src={iconMobile} /> : <img src={iconMobileFooter} />}{' '}
+          (31) 4000-1667
         </a>
         <a href="tel:+5531982042542" className="btn-green">
-          <img src={iconWhatsapp} /> (31) 98204-2542
+          {isMobile ? (
+            <img src={iconWhatsapp} />
+          ) : (
+            <img src={iconWhatsappFooter} />
+          )}
+          (31) 98204-2542
         </a>
       </div>
 
       <h4>ATENDIMENTO:</h4>
       <div className="sales-buttons">
         <a href="tel:+553140001667" className="btn-green">
-          <img src={iconMobile} /> (31) 4000-1667
+          {isMobile ? <img src={iconMobile} /> : <img src={iconMobileFooter} />}{' '}
+          (31) 4000-1667
         </a>
         <a href="#" className="btn-green">
-          Central de Ajuda
+          {!isMobile && <img src={iconQuestion} />}Central de Ajuda
         </a>
-        <a
-          href="mailto:atendimento@segurospromo.com.br"
-          className="btn-green btn-email"
-        >
-          <img src={iconEmail} /> atendimento@segurospromo.com.br
-        </a>
+        {isMobile && (
+          <a
+            href="mailto:atendimento@segurospromo.com.br"
+            className="btn-green btn-email"
+          >
+            <img src={iconEmail} /> atendimento@segurospromo.com.br
+          </a>
+        )}
       </div>
     </div>
   );
@@ -78,6 +90,7 @@ const Footer = () => {
             <img src={logo} alt="Logo" />
           </a>
           <div className="social-icons">
+            {!isMobile && <p>ACOMPANHE A GENTE:</p>}
             <a href="#">
               <img src={facebookIcon} alt="Facebook" />
             </a>
@@ -166,7 +179,7 @@ const Footer = () => {
           <div>
             <p>Transferência bancária</p>
             <div className="payment-icons">
-              <img src={logoBancos} alt="Bancos" />
+              <img src={logoBancos} alt="Bancos" className="banks" />
             </div>
           </div>
 
@@ -186,7 +199,7 @@ const Footer = () => {
             andar - Belo Horizonte - MG © 2017 <br />
             Seguros Promo - Emitir Shop | By - 2XT Tecnologia
           </p>
-          <img src={footerImg} />
+          <img src={iconPartners} />
         </div>
       </div>
     </footer>

@@ -84,6 +84,10 @@ hr.hr-green {
   opacity: 0.8;
 }
 
+.social-icons p {
+  font-size: 16px;
+}
+
 .footer-col p {
   font-family: 'Open Sans';
   font-weight: 400;
@@ -291,7 +295,6 @@ details summary::-webkit-details-marker {
   .sales-support .btn-green img {
     margin-right: 5px;
     vertical-align: middle;
-    background-color: #435162;
     padding: 4px;
     width: 20px;
     height: 20px;
@@ -305,11 +308,13 @@ details summary::-webkit-details-marker {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    font-size: 16px;
+    color: #007e47;
   }
 
   .footer-payments {
     display: grid;
-    grid-template-columns: 200px repeat(4, 1fr);
+    grid-template-columns: 1fr 3fr 1.5fr 2fr 2fr;
     gap: 2rem;
     align-items: start;
   }
@@ -340,6 +345,10 @@ details summary::-webkit-details-marker {
   .footer-payments img {
     width: 40px;
     height: auto;
+  }
+
+  .footer-payments .banks {
+    width: 100%;
   }
 
   .footer-bottom {

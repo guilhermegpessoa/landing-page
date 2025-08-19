@@ -144,7 +144,7 @@ nav a {
   }
 }
 
-.quote-btn {
+.btn-quote {
   display: block;
   margin: auto;
   background: var(--primary-color);
@@ -158,6 +158,13 @@ nav a {
   transition: background 0.3s ease;
   font-family: 'Poppins';
   order: 3;
+}
+
+@media (min-width: 768px) {
+  .btn-quote {
+    width: 242px;
+    height: 52px;
+  }
 }
 
 .quote-btn:hover {
@@ -197,6 +204,11 @@ nav a {
 }
 
 @media (min-width: 768px) {
+  .coverage {
+    background-color: #f8f8f8;
+    padding-bottom: 10px;
+  }
+
   .coverage h2 {
     font-size: 36px;
   }
@@ -287,13 +299,15 @@ nav a {
   .why-insurance {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      'text image'
+      'text text'
       'accordion image'
       'accordion button';
+    place-items: center;
   }
 
   .why-insurance-text {
     grid-area: text;
+    margin: auto;
   }
 
   .accordion-wrapper {
@@ -388,48 +402,54 @@ nav a {
 
 @media (min-width: 768px) {
   .questions {
-    background-image: url('src/assets/sectionQuestions.webp');
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
       'title contentTop'
-      'title contentBottom';
+      '. contentBottom';
+    gap: 1rem;
   }
 
   .questions h2 {
     grid-area: title;
-    max-width: 300px;
-    align-self: center;
+    max-width: 414px;
+    place-self: center;
+    text-align: center;
+    font-size: 36px;
   }
 
   .questions-content {
-    display: grid;
-    grid-template-areas:
-      'p1'
-      'p2'
-      'button';
-    grid-area: contentTop;
-    text-align: center;
-    align-self: start;
+    display: contents;
   }
 
   .questions-content p:nth-child(1) {
-    grid-area: p1;
+    grid-area: contentTop;
+    text-align: center;
+    align-self: center;
+    margin: 0 auto 4rem;
+    font-weight: 700;
+    font-size: 20px;
+    max-width: 462px;
   }
 
   .questions-content p:nth-child(2) {
-    grid-area: p2;
+    grid-area: contentTop;
+    align-self: center;
+    margin-top: 3rem;
   }
 
-  .questions-content button {
-    grid-area: button;
+  .questions button {
+    grid-area: contentTop;
     justify-self: center;
+    align-self: center;
+    margin-bottom: 2rem;
   }
 
   .questions-content p:nth-child(3) {
     grid-area: contentBottom;
+    text-align: center;
+    justify-self: center;
     align-self: end;
-    justify-self: end;
-    text-align: right;
   }
 }
