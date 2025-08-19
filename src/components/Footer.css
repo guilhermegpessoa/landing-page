@@ -63,6 +63,8 @@ hr.hr-green {
 
 .footer-logo img {
   width: 150px;
+  max-width: 100%;
+  height: auto;
 }
 
 .social-icons {
@@ -138,7 +140,6 @@ hr.hr-green {
   align-items: center;
   background-color: var(--primary-color);
   color: #fff;
-  width: 319px;
   height: 45px;
   opacity: 1;
   border-radius: 8px;
@@ -216,33 +217,133 @@ details summary::-webkit-details-marker {
 
 .payment-icons img {
   width: 40px;
-}
-
-.footer-logo img,
-.payment-icons img {
   max-width: 100%;
   height: auto;
 }
 
 .footer-bottom {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-size: 0.85rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @media (min-width: 768px) {
-  .footer-container {
-    flex-direction: row;
+  .footer-social {
+    display: flex;
     justify-content: space-between;
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
     align-items: flex-start;
   }
 
-  .sales-buttons {
-    flex-direction: row;
-    gap: 16px;
+  .footer-menu-column,
+  .sales-support {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .footer-col {
-    flex: 1;
+  .footer-col h4 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-menu-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-menu-column li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-menu-column li a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .sales-support h4 {
+    margin-top: revert !important;
+  }
+
+  .sales-support .btn-green {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .sales-support .btn-green img {
+    margin-right: 5px;
+    vertical-align: middle;
+    background-color: #435162;
+    padding: 4px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .sales-support .btn-green.btn-email {
+    display: block;
+  }
+
+  .sales-support .sales-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-payments {
+    display: grid;
+    grid-template-columns: 200px repeat(4, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .footer-payments p:first-child {
+    grid-column: 1 / 2;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .footer-payments p,
+  .footer-payments .payment-icons,
+  .footer-payments img {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-payments p:nth-child(n + 2) {
+    display: block;
+  }
+
+  .footer-payments .payment-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-payments img {
+    width: 40px;
+    height: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
