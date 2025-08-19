@@ -4,7 +4,8 @@ import logo from '../assets/logoFooter.png';
 import facebookIcon from '../assets/Facebook.png';
 import twitterIcon from '../assets/Twitter.svg';
 import instagramIcon from '../assets/Instagram.svg';
-import iconPhone from '../assets/iconPhone.png';
+import iconEmail from '../assets/iconEmail.svg';
+import iconMobile from '../assets/iconMobile.png';
 import iconWhatsapp from '../assets/iconWhatsapp.png';
 import logoMastercard from '../assets/logoMastercard.png';
 import logoVisa from '../assets/logoVisa.png';
@@ -24,6 +25,12 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
+      <div className="color-footer">
+        <div className="color-block green"></div>
+        <div className="color-block purple"></div>
+        <div className="color-block yellow"></div>
+        <div className="color-block darkGreen"></div>
+      </div>
       <div className="footer-container">
         <div className="footer-col">
           <a href="/" className="footer-logo">
@@ -48,7 +55,7 @@ const Footer = () => {
           <h4>CENTRAL DE VENDAS:</h4>
           <div className="sales-buttons">
             <a href="tel:+553140001667" className="btn-green">
-              <img src={iconPhone} /> (31) 4000-1667
+              <img src={iconMobile} /> (31) 4000-1667
             </a>
             <a href="tel:+5531982042542" className="btn-green">
               <img src={iconWhatsapp} /> (31) 98204-2542
@@ -58,16 +65,16 @@ const Footer = () => {
           <h4>ATENDIMENTO:</h4>
           <div className="sales-buttons">
             <a href="tel:+553140001667" className="btn-green">
-              <img src={iconPhone} /> (31) 4000-1667
+              <img src={iconMobile} /> (31) 4000-1667
             </a>
             <a href="#" className="btn-green">
               Central de Ajuda
             </a>
             <a
               href="mailto:atendimento@segurospromo.com.br"
-              className="btn-green"
+              className="btn-green btn-email"
             >
-              <FaEnvelope /> atendimento@segurospromo.com.br
+              <img src={iconEmail} /> atendimento@segurospromo.com.br
             </a>
           </div>
         </div>
@@ -116,7 +123,7 @@ const Footer = () => {
           <img src={logoPix} alt="PIX" />
         </div>
 
-        <hr />
+        <hr className="hr-green" />
 
         <div className="footer-bottom">
           <p>

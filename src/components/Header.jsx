@@ -1,7 +1,7 @@
 import logo from '../assets/logo.png';
 import iconWhatsapp from '../assets/iconWhatsapp.png';
 import iconCostumer from '../assets/iconCustomer.png';
-import iconPhone from '../assets/iconPhone.png';
+import iconMobile from '../assets/iconMobile.png';
 import NavMenu from './NavMenu';
 import './Header.css';
 
@@ -20,7 +20,7 @@ export default function Header() {
     <header>
       <div className="header-bar">
         <p>
-          CENTRAL DE VENDAS: <img src={iconPhone} />{' '}
+          CENTRAL DE VENDAS: <img src={iconMobile} />{' '}
           <span> (31)4000-1667 </span>
           <img src={iconWhatsapp} /> <span>(31) 2534-2115</span>
         </p>

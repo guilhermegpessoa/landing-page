@@ -10,6 +10,7 @@
   border-radius: 132px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-family: 'Poppins';
 }
 
 .btn:hover {

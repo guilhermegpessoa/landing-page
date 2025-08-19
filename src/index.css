@@ -48,7 +48,7 @@ nav a {
 }
 
 .quote {
-  padding: 40px 20px;
+  padding: 1rem 20px;
   background: #fff;
 }
 
@@ -82,7 +82,7 @@ nav a {
   font-weight: 700;
   font-size: 24px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 0.5rem;
 }
 
 .quote-text ul {
@@ -117,6 +117,10 @@ nav a {
 }
 
 @media (min-width: 768px) {
+  .quote {
+    padding: 2rem 20px;
+  }
+
   .quote-image {
     order: 0;
   }
@@ -131,6 +135,7 @@ nav a {
 
   .quote-text li {
     font-size: 18px;
+    align-items: baseline;
   }
 
   .quote-highlight {
@@ -151,6 +156,7 @@ nav a {
   border-radius: 132px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-family: 'Poppins';
   order: 3;
 }
 
@@ -204,7 +210,7 @@ nav a {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  padding: 2rem;
+  padding: 0 2rem 2rem;
   align-items: start;
 }
 
@@ -260,17 +266,20 @@ nav a {
     grid-area: accordion;
   }
 
-  .why-insurance > button {
-    grid-area: button;
-    justify-self: center;
-  }
-
   .desktop-text {
     display: none;
   }
 
   .mobile-text {
     display: block;
+    text-align: center;
+    margin: 0;
+  }
+
+  .btn.btn-accordion {
+    grid-area: button;
+    justify-self: center;
+    margin: 1rem auto;
   }
 }
 
@@ -305,13 +314,11 @@ nav a {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    'title'
     'content'
     'button';
   align-items: start;
   padding: 2rem;
   gap: 1rem;
-  /* background-image: url('src/assets/sectionQuestionsMobile.webp'); */
   background-size: cover;
   background-position: center;
   color: #3b454f;
@@ -320,7 +327,7 @@ nav a {
 }
 
 .questions h2 {
-  grid-area: title;
+  grid-area: content;
   margin: 0;
   text-align: center;
 }
@@ -330,23 +337,53 @@ nav a {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-self: start;
+  font-family: 'Poppins';
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.questions-content p:nth-child(1) {
+  font-size: 12px;
+}
+
+.questions-content p:nth-child(2) {
+  font-weight: 700;
+  font-size: 20px;
+  color: #83af38;
+}
+
+.questions-content p:nth-child(3) {
+  font-size: 10px;
+}
+
+.questions-content p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .questions button {
   grid-area: button;
+  display: flex;
   background: var(--primary-color);
   color: white;
   border: none;
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: 132px;
   cursor: pointer;
   transition: background 0.3s ease;
   justify-self: center;
   margin-top: auto;
+  font-family: 'Poppins';
   font-weight: 400;
   font-size: 10px;
   text-align: center;
+}
+
+.questions button img {
+  max-width: 15px;
+  max-height: 15px;
+  padding-right: 0.5rem;
 }
 
 @media (min-width: 768px) {

@@ -12,6 +12,7 @@ import heroImageMobile from './assets/heroMobile.webp';
 import sectionQuoteImg from './assets/sectionQuote.webp';
 import sectionWhyImg from './assets/sectionWhy.webp';
 import iconWhatsapp from './assets/iconWhatsapp.png';
+import iconPhone from './assets/iconPhone.png';
 import sectionQuestionsBg from './assets/sectionQuestions.webp';
 import sectionQuestionsMobileBg from './assets/sectionQuestionsMobile.webp';
 import './index.css';
@@ -104,7 +105,7 @@ export default function App() {
           <div className="why-insurance-image">
             <img src={sectionWhyImg} alt="Seguro de vida" />
           </div>
-          <Button text="Faça sua cotação" />
+          <Button text="Faça sua cotação" className="btn-accordion" />
         </section>
 
         <section
@@ -126,7 +127,11 @@ export default function App() {
                 gratuitamente!
               </p>
             )}
-            <p>(99) 99999.9999</p>
+            <p>
+              {' '}
+              <img src={iconPhone} />
+              (99) 99999.9999
+            </p>
             <p>Atendemos pelo telefone de seg. a sex., das 9h às 17h.</p>
           </div>
           {isMobile && (
